@@ -73,6 +73,19 @@
 
 ### 方法二：Docker 部署
 
+#### 使用預建映像 (推薦)
+
+1. **直接拉取並運行 Docker 映像**
+   ```bash
+   docker pull qazs10015/excel-analyzer:latest
+   docker run -d --name excel-analyzer -p 3001:3001 -v $(pwd)/database:/app/database qazs10015/excel-analyzer
+   ```
+
+2. **訪問應用**
+   - 應用程式：http://localhost:3001
+
+#### 自行建置
+
 1. **使用 Docker Compose 一鍵啟動**
    ```bash
    npm run docker:compose
@@ -113,12 +126,12 @@
 
 ### API 端點
 
-| 方法 | 端點 | 說明 |
-|------|------|------|
-| POST | `/api/upload` | 上傳 Excel 檔案 |
-| GET | `/api/search` | 搜尋資料 |
-| GET | `/api/files` | 獲取檔案列表 |
-| GET | `/api/analyze/:fileId` | 分析特定檔案 |
+| 方法 | 端點                   | 說明            |
+| ---- | ---------------------- | --------------- |
+| POST | `/api/upload`          | 上傳 Excel 檔案 |
+| GET  | `/api/search`          | 搜尋資料        |
+| GET  | `/api/files`           | 獲取檔案列表    |
+| GET  | `/api/analyze/:fileId` | 分析特定檔案    |
 
 ## 📁 專案結構
 
@@ -182,14 +195,6 @@ DATABASE_PATH=./database
 MAX_FILE_SIZE=10MB
 ```
 
-## 🤝 貢獻指南
-
-1. Fork 這個專案
-2. 建立功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交變更 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 開啟 Pull Request
-
 ## 📝 版本歷史
 
 - **v1.0.0** (2025-06-08)
@@ -211,7 +216,7 @@ MAX_FILE_SIZE=10MB
 
 感謝以下開源專案的支持：
 - [xlsx](https://github.com/SheetJS/sheetjs) - Excel 檔案處理
-- [React](https://react.dev/) - 前端框架
+- [React](https://react.dev/) - 前端 library
 - [Express.js](https://expressjs.com/) - 後端框架
 - [Vite](https://vitejs.dev/) - 前端建置工具
 
