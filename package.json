@@ -1,0 +1,21 @@
+{
+  "name": "excel-analyzer",
+  "version": "1.0.0",
+  "description": "Excel data analyzer and search tool",
+  "main": "server-commonjs.js",
+  "type": "module",
+  "scripts": {
+    "analyze": "node analyze.js",
+    "dev": "node server-commonjs.js",
+    "start": "node server-commonjs.js",
+    "docker:build": "docker build -t excel-analyzer .",
+    "docker:run": "docker run -d --name excel-analyzer -p 3001:3001 -v $(pwd)/database:/app/database excel-analyzer",
+    "docker:compose": "docker-compose up --build",
+    "docker:stop": "docker-compose down"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

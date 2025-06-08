@@ -1,0 +1,46 @@
+# Docker 相關檔案
+.dockerignore
+
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 前端構建檔案 (會在容器內重新構建)
+frontend/dist
+frontend/node_modules
+
+# 開發檔案
+.git
+.gitignore
+README.md
+*.md
+
+# 編輯器檔案
+.vscode
+.idea
+*.swp
+*.swo
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db
+
+# 暫存檔案
+*.tmp
+*.temp
+
+# 日誌檔案
+logs
+*.log
+
+# 測試檔案
+test/
+tests/
+__tests__/
+coverage/
+
+# 開發工具
+.nyc_output
+.eslintcache
